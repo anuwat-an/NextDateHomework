@@ -20,6 +20,13 @@ public class NextDate {
         add("december"); // 31
     }};
 
+    /*
+    public static void main(String[] args) {
+        nextDate(1.1, 11.5, 1991.9);
+    }
+    */
+
+    /*
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -69,8 +76,16 @@ public class NextDate {
         System.out.println(nextDate(date, month, year));
 
     }
+    */
+
+    public static String nextDate(int date, int month, int year) {
+        return nextDate(date, months.get(month-1), year);
+    }
 
     public static String nextDate(int date, String month, int year) {
+
+        if (date <= 0 || date > 31 || !months.contains(month) || year <= 0)
+            return "Data input is invalid.";
 
         boolean dateInvalid = false;
         if (months.indexOf(month) == 3 || months.indexOf(month) == 5 || months.indexOf(month) == 8 || months.indexOf(month) == 10) {
