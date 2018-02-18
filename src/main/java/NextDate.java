@@ -20,13 +20,13 @@ public class NextDate {
         add("december"); // 31
     }};
 
-    /*
-    public static void main(String[] args) {
-        nextDate(1.1, 11.5, 1991.9);
-    }
-    */
+   /*
+     public static void main(String[] args) {
 
-    /*
+     }
+  */
+
+  /*
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -78,8 +78,13 @@ public class NextDate {
     }
     */
 
-    public static String nextDate(int date, int month, int year) {
-        return nextDate(date, months.get(month-1), year);
+    public static String nextDate(String dateStr) { //example 01/01/2017
+        String[] array = dateStr.split("/");
+        int date = Integer.parseInt(array[0]);
+        String month = months.get(Integer.parseInt(array[1])-1);
+        int year = Integer.parseInt(array[2]);
+
+        return nextDate(date,month,year);
     }
 
     public static String nextDate(int date, String month, int year) {
