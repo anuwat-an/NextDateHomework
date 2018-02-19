@@ -140,7 +140,7 @@ public class NextDate {
 
         if (dateInvalid)
             return "Date input is invalid.";
-        return String.format("Tomorrow is %02d/%s/%d.", date, month, year);
+        return String.format("%02d/%02d/%d", date, months.indexOf(month)+1, year);
 
     }
 
